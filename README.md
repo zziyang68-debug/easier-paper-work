@@ -2,6 +2,8 @@
 
 A Python desktop tool for comparing two files paragraph by paragraph and helping clean up mismatched revisions.
 
+在作者们和审稿人之间辗转，在response letter和正文间辗转，我已厌倦，，，逐步更新，如果codex不继续砍额度的话
+
 ## Ver2 features
 
 - Select two files from the GUI instead of pasting raw text.
