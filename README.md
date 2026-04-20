@@ -1,8 +1,18 @@
 # Easier Paper Work
 
-A small Python desktop tool for comparing two pieces of text side by side and highlighting differences.
-辗转于导师和投稿系统之间，response letter和正文反复比对，我已厌倦，，，
-可能会继续完善，只要Codex的额度不继续削减（）
+A Python desktop tool for comparing two files paragraph by paragraph and helping clean up mismatched revisions.
+
+## Ver2 features
+
+- Select two files from the GUI instead of pasting raw text.
+- Support `docx` and `txt` input, with `docx` as the main workflow.
+- Match highly similar paragraphs by natural paragraph units.
+- Preview the standard paragraph and target paragraph side by side in the UI.
+- Count pending differences in the right sidebar.
+- Correct one item at a time or apply all corrections in one click.
+- Choose whether file A or file B is treated as the standard.
+- Export a corrected copy instead of overwriting the original file.
+
 ## Files
 
 - `text_compare_tool.py`: main Tkinter GUI application.
@@ -23,3 +33,5 @@ Or double-click `launch_text_compare_tool.bat`.
 ```bat
 build_exe.bat
 ```
+
+The packaged executable is written to the parent directory.
