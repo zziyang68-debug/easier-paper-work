@@ -6,6 +6,7 @@ import sys
 
 conda_bin_dir = os.path.join(sys.base_prefix, "Library", "bin")
 required_binaries = [
+    (os.path.join(conda_bin_dir, "ffi.dll"), "."),
     (os.path.join(conda_bin_dir, "libbz2.dll"), "."),
     (os.path.join(conda_bin_dir, "libexpat.dll"), "."),
     (os.path.join(conda_bin_dir, "libcrypto-3-x64.dll"), "."),
