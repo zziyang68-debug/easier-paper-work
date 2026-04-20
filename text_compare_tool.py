@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import ctypes
 import difflib
 import os
 import re
@@ -18,6 +19,19 @@ XML_NS = "http://www.w3.org/XML/1998/namespace"
 NS = {"w": WORD_NS}
 
 ET.register_namespace("w", WORD_NS)
+
+
+def configure_windows_dpi() -> None:
+    if os.name != "nt":
+        return
+
+    try:
+        ctypes.windll.shcore.SetProcessDpiAwareness(2)
+    except Exception:  # noqa: BLE001
+        try:
+            ctypes.windll.user32.SetProcessDPIAware()
+        except Exception:  # noqa: BLE001
+            return
 
 
 @dataclass
@@ -751,10 +765,15 @@ class TextCompareApp:
 
 
 def main() -> None:
+    configure_windows_dpi()
     root = tk.Tk()
     style = ttk.Style()
     if "vista" in style.theme_names():
         style.theme_use("vista")
+    try:
+        root.tk.call("tk", "scaling", root.winfo_fpixels("1i") / 72.0)
+    except Exception:  # noqa: BLE001
+        pass
     TextCompareApp(root)
     root.mainloop()
 
