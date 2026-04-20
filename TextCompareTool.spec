@@ -7,9 +7,11 @@ import sys
 conda_bin_dir = os.path.join(sys.base_prefix, "Library", "bin")
 required_binaries = [
     (os.path.join(conda_bin_dir, "libbz2.dll"), "."),
+    (os.path.join(conda_bin_dir, "libexpat.dll"), "."),
     (os.path.join(conda_bin_dir, "libcrypto-3-x64.dll"), "."),
     (os.path.join(conda_bin_dir, "liblzma.dll"), "."),
     (os.path.join(conda_bin_dir, "libmpdec-4.dll"), "."),
+    (os.path.join(conda_bin_dir, "libssl-3-x64.dll"), "."),
     (os.path.join(conda_bin_dir, "tcl86t.dll"), "."),
     (os.path.join(conda_bin_dir, "tk86t.dll"), "."),
 ]
